@@ -9,9 +9,9 @@ import copy
 import numpy
 import pylab
 
-from wpg.beamline import Beamline
-from wpg.srwlib import srwl
-from wpg.wavefront import Wavefront
+from .beamline import Beamline
+from .srwlib import srwl
+from .wavefront import Wavefront
 
 __author__ = 'A. Buzmakov, L. Samoylova, C. Fortmann-Grote'
 

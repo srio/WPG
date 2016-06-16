@@ -5,7 +5,7 @@
 from __future__ import print_function #Python 2.7 compatibility
 
 try:
-    from wpg import srwlpy as srwl
+    from . import srwlpy as srwl
 except ImportError:
     import srwlpy as srwl  #  Hack for read the docs
 
@@ -16,7 +16,7 @@ import random
 import sys
 import os
 import traceback
-from wpg import uti_math
+from . import uti_math
 from .srwl_uti_cryst import *
 #try:
 #    from uti_plot import * #universal simple plotting module distributed together with SRWLib

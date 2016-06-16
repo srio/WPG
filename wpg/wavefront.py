@@ -18,12 +18,12 @@ import warnings
 import numpy as np
 import h5py
 
-import wpg.srwlib as srwlib
+from . import srwlib
 
-import wpg.utils as utils
-import wpg.glossary as glossary
+from . import utils
+from . import glossary
 
-from wpg.utils import srw_obj2str
+from .utils import srw_obj2str
 
 warnings.filterwarnings('ignore', category=Warning)
 

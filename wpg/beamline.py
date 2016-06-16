@@ -13,10 +13,10 @@ This module contains  wrapper for SRWLOptC (optical container) and propagetion p
 .. moduleauthor:: Alexey Buzmakov <buzmakov@gmail.com>
 """
 
-import wpg.srwlib as srwlib
-from wpg.srwlib import srwl
-from wpg.utils import srw_obj2str
-import wpg.optical_elements
+from . import srwlib
+from .srwlib import srwl
+from .utils import srw_obj2str
+from . import optical_elements
 
 
 class Beamline(object):
@@ -40,7 +40,7 @@ class Beamline(object):
                 try:
                     elem = srwl_beamline.arOpt[ti]
                 except IndexError:
-                    elem = wpg.optical_elements.Empty()
+                    elem = optical_elements.Empty()
 
                 try:
                     pp = srwl_beamline.arProp[ti]
@@ -62,7 +62,7 @@ class Beamline(object):
                 try:
                     elem = po['optical_elements'][ti]
                 except IndexError:
-                    elem = wpg.optical_elements.Empty()
+                    elem = optical_elements.Empty()
 
                 try:
                     pp = po['propagation_parameters'][ti]
@@ -110,7 +110,7 @@ class Beamline(object):
             last_pp_opt['propagation_parameters'].append(pp)
 
         # support resizing element
-        if optical_element == [] or isinstance(optical_element, wpg.optical_elements.Empty):
+        if optical_element == [] or isinstance(optical_element, optical_elements.Empty):
             pp = _get_srw_pp(propagation_parameters)
 
             last_pp_opt['propagation_parameters'].append(pp)
