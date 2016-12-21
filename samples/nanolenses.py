@@ -3,7 +3,7 @@
 
 # In[ ]:
 
-get_ipython().magic(u'pylab inline')
+#get_ipython().magic(u'pylab inline')
 
 
 # In[ ]:
@@ -29,14 +29,14 @@ from wpg.converters.nanolenses import EdfFile
 # In[ ]:
 
 def get_array_from_edf(edf_file_name):
-    print 'Processing EDF file {}'.format(edf_file_name)
+    print ('Processing EDF file {}'.format(edf_file_name))
     edf_structure = EdfFile.EdfFile(edf_file_name,'r')
     edf_header = edf_structure.GetHeader(0)
-    print 'Number of images in EDF file {}'.format(edf_structure.GetNumImages())
-    print 'EDF header:'
+    print ('Number of images in EDF file {}'.format(edf_structure.GetNumImages()))
+    print ('EDF header:')
     for k,v in edf_header.items():
-        print '\t{:20}:\t{}'.format(k,v)
-    print edf_structure.GetData(0).dtype
+        print ('\t{:20}:\t{}'.format(k,v))
+    print (edf_structure.GetData(0).dtype)
     image_data = edf_structure.GetData(0).astype('float32')
     image_min = np.float32(edf_header['TUD_ScalingMin'])
     image_max = np.float32(edf_header['TUD_ScalingMax'])

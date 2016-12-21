@@ -13,8 +13,8 @@ This module contains  wrapper for SRWLOptC (optical container) and propagetion p
 .. moduleauthor:: Alexey Buzmakov <buzmakov@gmail.com>
 """
 
-import wpg.srwlib as srwlib
-from wpg.srwlib import srwl
+import srwlib
+from srwlib import srwl
 from wpg.utils import srw_obj2str
 import wpg.optical_elements
 
